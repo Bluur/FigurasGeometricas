@@ -3,7 +3,6 @@ package Circulo;
 
 import Punto.Punto;
 import java.lang.Math;
-import java.util.Objects;
 
 public class Circulo {
     private Punto centro = new Punto(0,0);
@@ -56,7 +55,7 @@ public class Circulo {
     }
     
     public Punto getCentro() {
-        return centro;
+        return new Punto(this.centro);
     }
 
     public void setCentro(Punto centro) {
@@ -76,12 +75,9 @@ public class Circulo {
     }
 
     public boolean equals(Circulo c) {
-        
-        return c.centro.getX() == this.centro.getX() && c.centro.getY() == this.centro.getY() && c.getRadio() == this.getRadio();
+        return this.centro.equals(c.centro) && this.radio == c.radio;
     }
 
-    
-    
     @Override
     public String toString() {
         return "{" + "centro = " + centro + ", radio = " + radio + '}';

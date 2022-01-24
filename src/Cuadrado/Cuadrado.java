@@ -35,7 +35,7 @@ public class Cuadrado {
     
     //Métodos
     public Punto getCentro() {
-        return centro;
+        return new Punto(this.centro);
     }
 
     public void setCentro(Punto centro) {
@@ -54,7 +54,7 @@ public class Cuadrado {
     }
 
     public boolean equals(Cuadrado c) {
-        return this.centro.getY() == c.centro.getY() && this.apotema == c.apotema && c.centro.getX() == this.centro.getX();
+        return this.centro.equals(c.centro) && this.apotema == c.apotema;
     }
     
     public double getArea(){
